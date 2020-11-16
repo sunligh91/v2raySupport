@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+<script type="text/javascript" src="plugins/angularjs/angular.min.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
+
+<body ng-app="v2ray" ng-controller="indexController"  ng-init="init()">
+    <div class="col-xs-12 col-sm-12">
+        <div class="slide-desktop">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h1><span class="t-color-6">装修公司</span></h1>
+                            <div class="heading-border b-color-6"></div>
+                        </div>
+                    </div> <!-- section title -->
+                </div>
+            </div>
+            <div class="normal-list">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="media desk-media" ng-repeat="entity in list">
+                            <div class="media-left">
+                                <a href="/company-info.html#?id={{entity.id}}">
+                                    <img src="{{entity.pic}}" alt="">
+                                    <div class="thumb-overlay text-center"><i class="fa fa-eye"></i></div>
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h3>{{entity.name}}</h3>
+                                <p>{{entity.introduction}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- slide desktop -->
+        <!-- pagination -->
+        <tm-pagination conf="paginationConf"></tm-pagination>
+    </div>
+</body>
+</html>
